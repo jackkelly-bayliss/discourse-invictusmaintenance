@@ -3,7 +3,6 @@
         ipaddress = data.ip;
         whitelistedIPs = settings.whitelisted_ipaddresses;
 		if (settings.enabled_maintenance === true) {
-		
 			if (whitelistedIPs.includes(ipaddress) === false) {
 				console.log("LOG: IP is not in the whitelisted list, maintenance mode showing.");
 				document.write("<style>html {background: url('https://i.imgur.com/VPnnkz7.png') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>");
@@ -12,6 +11,5 @@
 				window.stop();
 			}
 		}
-        
     });
 </script>
