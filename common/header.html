@@ -1,0 +1,17 @@
+<script type="text/discourse-plugin" version="0.8.13">
+      $.getJSON('https://api.ipify.org?format=jsonp&callback=?', function(data) {
+        ipaddress = data.ip;
+        whitelistedIPs = settings.whitelisted_ipaddresses;
+		if (settings.enabled_maintenance === true) {
+		
+			if (whitelistedIPs.includes(ipaddress) === false) {
+				console.log("LOG: IP is not in the whitelisted list, maintenance mode showing.");
+				document.write("<style>html {background: url('https://i.imgur.com/VPnnkz7.png') no-repeat center center fixed;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}</style>");
+				document.write('<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">');
+				document.write("<h1 style=\"color: white;font-family: 'Roboto', sans-serif;text-align: center;position: relative;top: 50%;transform: translateY(-50%);\">Maintenance Mode<br><br><span style='font-size: 14px;'>We're currently screwing some screws and tidying up a few places.</br>Please try again later.</span></h1>");
+				window.stop();
+			}
+		}
+        
+    });
+</script>

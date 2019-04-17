@@ -1,0 +1,8 @@
+enabled_maintenance: 
+  default: false
+  description: 'Enable/Disable the maintenance mode.'
+
+whitelisted_ipaddresses:
+  default: ""
+  type: list
+  description: "Please list the whitelisted IP Addresses here."
